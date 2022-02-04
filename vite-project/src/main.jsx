@@ -10,9 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Header />
         <Route exact path="/" element={<Home />} />
-        <Route path="/survey" element={<Survey />} />
+        <Route path="/survey/:questionNumber" element={<Survey />} />
       </Routes>
     </Router>
   </React.StrictMode>,
