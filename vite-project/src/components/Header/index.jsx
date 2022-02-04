@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import ShinyLogo from '../../assets/Shiny-logo.png'
 
 const StyledLink = styled(Link)`
   padding: 15px;
