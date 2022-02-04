@@ -1,30 +1,43 @@
-/* eslint-disable import/no-unresolved */
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import logo from '../../logo.svg'
 import '../App.css'
-import Banner from '../../components/Banner'
-import Cart from '../../components/Cart'
-import ShoppingList from '../../components/ShoppingList'
-import Footer from '../../components/Footer'
 
 function Home() {
-  const savedCart = localStorage.getItem('cart')
-  const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }, [cart])
+  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <Banner>
-        <img src={logo} alt="logo-la-maison-jungle" className="lmj-logo" />
-        <h1 className="lmj-title">La maison jungle</h1>
-      </Banner>
-      <div className="lmj-layout-inner">
-        <Cart cart={cart} updateCart={updateCart} />
-        <ShoppingList cart={cart} updateCart={updateCart} />
-      </div>
-      <Footer />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Hello Vite + React!</p>
+        <p>
+          <button type="button" onClick={() => setCount((count) => count + 1)}>
+            count is: {count}
+          </button>
+        </p>
+        <p>
+          Edit <code>App.jsx</code> and save to test HMR updates.
+        </p>
+        <p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+          {' | '}
+          <a
+            className="App-link"
+            href="https://vitejs.dev/guide/features.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vite Docs
+          </a>
+        </p>
+      </header>
     </div>
   )
 }
