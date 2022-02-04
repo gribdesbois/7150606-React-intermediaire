@@ -9,6 +9,10 @@ const Card = ({ label, title, picture }) => (
   </div>
 )
 
-Card.propTypes = {}
+Card.propTypes = {
+  label: PropTypes.string,
+  title: PropTypes.string,
+  picture: PropTypes.string,
+}
 
 export default Card
